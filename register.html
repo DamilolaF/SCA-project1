@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>My Register</title>
+
+
+</head>
+<body>
+    <main>
+        <div class="container">
+ <form name="form-register" class="form-register">
+     <h1>REGISTER</h1>
+     <p>Please fill in this form to create an account.</p>
+    <hr>
+    <div class="form-body">
+     <label for="uname">Username</label>
+     <input type="text" id="uname" placeholder="Enter Username" name="uname" required>
+     
+     <label for="mail">Email</label>
+        <input type="email" id="mail" placeholder="Email" required>
+    
+        <label for="number">Phone Number</label>
+        <input type="tel" id="num" placeholder="Phone Number" required>
+
+     <label for="psw">Password</label>
+     <input type="password" id="psw" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name="psw" required>
+    <a href="/login.html">
+     <button id="reg_btn" type="submit" value="Register">Register</button>
+    </a>
+    </div>
+    </div>
+    </main>
+
+ </form>  
+</body>
+<script src="script.js"></script>
+</html>
