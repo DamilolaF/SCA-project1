@@ -1,10 +1,9 @@
-  const submitBtn = document.getElementById('reg_btns');
+/*   const submitBtn = document.getElementById('reg_btns');
   const btnLogin = document.getElementById('login_btns');
-
+ */
 
 //Select all elements
-function register(){
-    submitBtn.addEventListener('click', register); 
+function register(){ 
     let mail = document.getElementById('mail').value;
     let pw = document.getElementById('psw').value;
     let num = document.getElementById('num').value;
@@ -12,7 +11,7 @@ function register(){
     
     //storing to local storage
 
-    /* if(userName.length == ""){
+     if(userName.length == ""){
     userName.style.border = "1px solid red";
     userName.focus();
     alert('Please fill in username');
@@ -28,13 +27,14 @@ function register(){
     alert('Please fill in email and password');
 
 } else if(!pw.match(numbers)){
+    pw.style.border = "1px solid red";
     alert('please add 1 number');
 
 } else if(!pw.match(upperCaseLetters)){
     alert('please add 1 uppercase letter');
 
 
-}else { */
+}else { 
 
     localStorage.setItem('mail', mail)
     localStorage.setItem('psw', pw)
@@ -49,17 +49,17 @@ function register(){
     alert('Your account has been created');   
 
     window.location.href ="/login.html";
-    
-  }
+} 
+}
+/* document.addEventListener("DOMContentLoaded", function(){
+    submitBtn.addEventListener('click', register());
+loginBtn.addEventListener('click', check());
+}) */
  
 //checking
 
-
-
-
-
 function check(){ 
-    
+    let userName = localStorage.getItem('uname')
     let storedMail = localStorage.getItem('mail');
     let storedPw = localStorage.getItem('psw');
 
@@ -70,11 +70,10 @@ function check(){
     if(userMail.value == storedMail && userPw.value == storedPw){
         
         localStorage.setItem('code','secret') 
-        window.location.href="/profile.html";
         alert('You are logged in.');
-       
-        //welcome
-        document.write(`Hello ${userName} welcome` );
+
+        window.location.href ="/profile.html";
+        
     }else{
         alert('Error on login'); 
     }
@@ -88,11 +87,18 @@ function check(){
    if (secret=='secret'){
    
 }else {
-    window.localStorage.removeItem('')
+    window.localStorage.removeItem('uname')
+    window.localStorage.removeItem('mail')
+    window.localStorage.removeItem('num')
+    window.localStorage.removeItem('psw')
     window.location.href="/login.html";
-    }
-
-     
+    alert("Logged out successfully!")
+    document.classList.remove('container')
+    document.style.display = none;
+    }   
 }
-
-
+function logoutForm(){
+    document.getElementById('logout').addEventListener('click',
+    logout()
+    )
+}
