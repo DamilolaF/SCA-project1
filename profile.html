@@ -12,22 +12,25 @@
     <main>
 <h1>Welcome:  </h1>
 <div class="container">
+    <div id="welcome">
 <div class="card">
   <img id="avatar" src="https://picsum.photos/id/1/200/200" alt="Jane" style="width:100%">
   <h1 id="names">Jane Doe</h1>
-  <div id="username">
-    PuppyLover345
-</div>
+  <div id="username">PuppyLover345</div>
 <div class="description">
     <div>Email: <span id="email">jane.doe@example.com</span></div>
     <div>City: <span id="city">London</span></div>
 </div>
 <div class="footer">
-  <button id="btn">Log out</button>
+<a href="/login.html">
+  <button id="btn" onclick="logOut()">Log out</button></a>
+</div>
 </div>
 </div>
         </div>
     </main>
+    <script src="script.js" defer></script>
 </body>
-<script src="script.js"></script>
+
+
 </html>

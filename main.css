@@ -37,12 +37,13 @@ input[type=text]:focus {
   }
 
   #reg_btn {
-    padding: 10px;
+    padding: 20px;
     margin-top: 10px;
     color:cornsilk;
     font-weight: bolder;
     background-color: gray; 
-    text-decoration: none;   
+    text-decoration: none; 
+      
 }
 #reg_btn:hover {
     opacity: 0.7;
