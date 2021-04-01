@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="login">
-    <form name='form-login'>
+    <form name='form-login' id="form-login">
 
         <h1>SIGN IN</h1>
 
@@ -25,11 +25,12 @@
                    style="display: inline-block;">
             <label>Remember me</label>
         </div>
-        <div id="login_btns" onclick="check()">
-        <a href="/profile.html">
-        <input id="login_btn" type="submit" value="Login">
-        </a>
-    </div>
+        
+        <div id="login_btns">
+            <a href="/profile.html">
+            <button id="login_btn" type="submit">Login</button>
+            </a>
+    
     </form>
 </div>
 <script src="script.js" type="text/javascript" defer></script>

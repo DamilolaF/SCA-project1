@@ -13,7 +13,7 @@
     <main>
         <div class="container">
          <!--     <p id="login-error" >Invalid username</p>-->
- <form name="form-register" class="form-register">
+ <form name="form-register" class="form-register" action="login.html">
      <h1>REGISTER</h1>
      <p>Please fill in this form to create an account.</p>
     <hr>
@@ -29,11 +29,14 @@
 
      <label for="psw">Password</label>
      <input type="password" id="psw" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name="psw" required>
-    <div id="reg_btns" onclick="register()">
+        
+        <div id="reg_btns">
      <a href="/login.html">
-     <input type="submit" id="reg_btn" value="Register">
-    </a>
-    </div>
+        <button id="reg_btn" type="submit">Register</button>
+       </a>
+   
+       </div>
+
     </div>
     </div>
     </main>

@@ -1,40 +1,55 @@
-/*   const submitBtn = document.getElementById('reg_btns');
-  const btnLogin = document.getElementById('login_btns');
- */
+const regForm = document.getElementById('reg_form');
+const loginForm = document.getElementById('login_form');
+
+if(regForm){
+    regForm.addEventListener('submit', (evt)=> {
+        evt.preventDefault()
+        register()
+    })
+}
+
+if(loginForm){
+    loginForm.addEventListener('submit', (evt)=> {
+        evt.preventDefault()
+        check()
+    })
+  }
+
 
 //Select all elements
 function register(){ 
-    let mail = document.getElementById('mail').value;
-    let pw = document.getElementById('psw').value;
-    let num = document.getElementById('num').value;
-    let userName = document.getElementById('uname').value;
+    const mailEl = document.getElementById('mail').value;
+    const pwEl = document.getElementById('psw').value;
+    const userNameEl = document.getElementById('uname').value;
+    const numEl = document.getElementById('num').value
+    /* let mail = mailEl.value;
+    let pw = pwEl.value;
+    let num = numEl.value;
+    let userName = userNameEl.value; */
+
     
     //storing to local storage
 
-     if(userName.length == ""){
-    userName.style.border = "1px solid red";
-    userName.focus();
+     if(userNameEl === ''){
+    userNameEl.style.border = "1px solid red";
+    userNameEl.focus();
     alert('Please fill in username');
     return false;
 }
- else if(pw == ''){
-    pw.style.border = "1px solid red";
+ if(pw === ''){
+    pwEl.style.border = "1px solid red";
     alert('Please fill in password');
-    pw.focus();
+    pwEl.focus();
     return false;
 
-} else if(userName == "" && pw.length == 0){
-    alert('Please fill in email and password');
+} 
 
-} else if(!pw.match(numbers)){
+ if(!pw.match(num)){
     pw.style.border = "1px solid red";
     alert('please add 1 number');
+    return
 
-} else if(!pw.match(upperCaseLetters)){
-    alert('please add 1 uppercase letter');
-
-
-}else { 
+} 
 
     localStorage.setItem('mail', mail)
     localStorage.setItem('psw', pw)
@@ -42,19 +57,16 @@ function register(){
     localStorage.setItem('uname', userName)
    
 
-    document.getElementById('mail').value = "";
+ document.getElementById('mail').value = "";
     document.getElementById('psw').value = "";
     document.getElementById('num').value = "";
-    document.getElementById('uname').value = "";
+    document.getElementById('uname').value = ""; 
     alert('Your account has been created');   
 
     window.location.href ="/login.html";
 } 
-}
-/* document.addEventListener("DOMContentLoaded", function(){
-    submitBtn.addEventListener('click', register());
-loginBtn.addEventListener('click', check());
-}) */
+
+
  
 //checking
 
@@ -102,3 +114,4 @@ function logoutForm(){
     logout()
     )
 }
+
