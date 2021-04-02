@@ -10,9 +10,7 @@
 </head>
 <body>
     <main>
-<h1>Welcome: <script>
-    let userName = localStorage.getItem('uname').value;
-    ("Hello" + userName +"Welcome to your profile")</script> </h1>
+<div class="name-form"></div>
 <div class="container">
     <div id="welcome">
 <div class="card">
@@ -23,7 +21,7 @@
     <div>Email: <span id="email">jane.doe@example.com</span></div>
     <div>City: <span id="city">London</span></div>
 </div>
-<div class="footer" id="logout">
+<div class="footer" id="logout" onclick= logOut()>
 <a href="/login.html">
   <button id="btn">Log out</button></a>
 </div>
