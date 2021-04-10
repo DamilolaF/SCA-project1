@@ -6,23 +6,20 @@ const nameForm = document.getElementById('name-form');
 //Select all elements
 function register(){ 
     const mail = document.getElementById('mail').value;
-    const pw = document.getElementById('psw').value;
-    const userName = document.getElementById('uname').value;
+    const psw = document.getElementById('psw').value;
+    const uName = document.getElementById('uname').value;
     const num = document.getElementById('num').value;
     
     //storing to local storage
+    const loginDetails = {
+            mail: mail,
+            psw: psw,
+            uName: uName,
+            num: num
+    }
 
+    window.localStorage.setItem('user', JSON.stringify(loginDetails)) 
 
-    window.localStorage.setItem('mail', mail)
-    window.localStorage.setItem('psw', pw)
-    window.localStorage.setItem('num',num)
-    window.localStorage.setItem('uname', userName)
-   
-
-    document.getElementById('mail').value = "";
-    document.getElementById('psw').value = "";
-    document.getElementById('num').value = "";
-    document.getElementById('uname').value = ""; 
     alert('Your account has been created');   
 
     window.location.href ="/login.html";
@@ -63,18 +60,21 @@ if(loginForm){
         check()
     })
   }
-
+// To display profile
+function displayProfile(){
+   let {mail, psw, uName, num} = JSON.parse(window.localStorage.getItem('user'));
+   let display = document.getElementById('welcome');
+   display.innerHTML = `Hello ${uName}, Welcome to your profile`
+}
 //log out
     function logOut(){ 
-    nameForm.innerHTML = `Hello ${userName}, Welcome to your profile`;
+    nameForm.innerHTML = `Hello ${uName}, Welcome to your profile`;
    let secret = localStorage.getItem('code');
    if (secret=='secret'){
    
 }else {
-    window.localStorage.clear('uname')
-    window.localStorage.clear('mail')
-    window.localStorage.clear('num')
-    window.localStorage.clear('psw')
+    window.localStorage.clear('user', JSON.stringify(loginDetails))
+    
     window.location.href="/login.html";
     alert("Logged out successfully!")
     document.classList.remove('container')
@@ -83,9 +83,10 @@ if(loginForm){
     }    
 }
 
-function logoutForm(){
-    document.getElementById('logout').addEventListener('click',
-    logout()
-    )
-}
-
+/* if(logOutForm){
+    logOutForm.addEventListener('click', (evt)=> {
+        evt.preventDefault()
+        logOut()
+    })
+  }
+ */
